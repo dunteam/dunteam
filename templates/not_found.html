@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+	<head>
+		<title>DunTeam - Step by Step</title>
+		
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="Keywords" content="dunteam dun team"/>
+		<meta name="Description" content="Dun Team"/>
+		<meta property="og:title" content="Dun Team" />
+		<meta property="og:image" content="dunteam_128.png" />
+		<meta property="og:description" content="A giant step is built on small steps" />
+
+		<link rel="icon" type="image/png" href="dunteam_48.png" />
+		<link href="main.css" rel="stylesheet" type="text/css" />
+		
+		<!--[if lt IE 9]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+		<script src="jquery-1.7.2.min.js"></script>
+		<script src="jquery.tagcanvas.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		  $(document).ready(function() {
+			if(!$('#cloud').tagcanvas({
+			  textColour: '#ff0000',
+			  outlineColour: '#f4f4f4;',
+			  reverse: true,
+			  depth: 0.8,
+			  maxSpeed: 0.05
+			},'tags')) {
+			  // something went wrong, hide the canvas container
+			  $('#myCanvasContainer').hide();
+			}
+		  });
+		</script>
+	</head>
+
+<body>
+	
+	<div id="main">
+		<div id="myCanvasContainer">
+			<canvas width="1000px" height="600px" id="cloud">
+				<p>Хэрэв та үүнийг уншиж байгаа бол таны веб хөтөч тань canvas дэмждэггүй юм байна. Веб хөтөчөө шинэчлэнэ үү</p>
+			</canvas>
+		</div>
+		<div id="tags">
+			<ul>
+				<li><a href="#">404 Page Not Found</a></li>
+				<li><a href="#">404 Page Not Found</a></li>
+				<li><a href="#">404 Page Not Found</a></li>
+				<li><a href="#">404 Page Not Found</a></li>
+				<li><a href="#">404 Page Not Found</a></li>
+			</ul>
+		</div>
+		
+		<div id="subscribe">
+			<div id="sub_form">
+				<p>
+					Шинэ мэдээ, апп-ын талаар мэдээлэл авах бол имэйлээ үлдээнэ үү
+				</p>
+				<p>
+					<form action="/addSubscriber" method="post">
+							{% if form.email.errors %}
+								<span class="error_msg">Зөв имэйл оруулна уу!</span><br/>
+							{% endif %}
+						<label>Таны имэйл:</label>
+						{{ form.email }}
+						<input type="submit" value="Илгээх"/>
+					</form>
+				</p>
+			</div>
+		</div>
+		<div id="footer">
+			<footer>
+				<p>Ашгын бус зорилгоор ашиглахыг зөвшөөрнө. Манай GitHub хуудасд зочилно уу</p>
+				<p>Гишүүд нэвтрэх бол энд дарна уу</p>
+				<p>DunTeam 2013</p>				
+			</footer>
+		</div>
+	</div>
+ </body>
+
+</html>

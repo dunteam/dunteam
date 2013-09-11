@@ -1,0 +1,50 @@
+application: dunundsen
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /(.*\.css)
+  static_files: resources/css/\1
+  upload: resources/css/(.*)
+
+- url: /(.*\.(gif|png|jpg|ico))
+  static_files: resources/images/\1
+  upload: resources/images/(.*\.(gif|png|jpg|ico))
+  
+- url: /(.*\.(mp3|wma))
+  static_files: resources/music/\1
+  upload: resources/music/(.*\.(mp3|wma))  
+  
+- url: /(.*\.js)
+  static_files: resources/js/\1
+  upload: resources/js/(.*)
+  
+- url: /(.*\.(xml))
+  static_files: resources/xml/\1
+  upload: resources/xml/(.*)
+  
+- url: /(.*\.(swf))
+  static_files: resources/flash/\1
+  upload: resources/flash/(.*)
+
+- url: /(.*\.(zip|exe|msi))
+  static_files: resources/files/\1
+  upload: resources/files/(.*)
+ 
+- url: /.*
+  script: main.py
+  
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.bak$
+- ^django
+- ^non_gae_indicator

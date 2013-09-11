@@ -1,0 +1,6 @@
+indexes:
+
+#- kind: Word
+#  properties:
+#  - name: insert_date
+#    direction: desc
